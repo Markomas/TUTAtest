@@ -288,4 +288,225 @@ Now let's stage files with `git add .` and commit it
     git commit -m "Resolved my first merge conflict"
     git push origin master
   
+  
+  # TransUnion TUTA pro workshop #2
+
+## Contents
+
+ 1. Fork overview: Git clone, fetch, pull, push, branches, merge
+ 2. Fork overview: Git merge conflict
+ 3. GitHub Pull Request
+ 4. GitHub Pull Request merge conflict solving
+ 5. Git reset
+ 6. Conclusion
+
+## Fork overview: Git fetch, pull, push, branches, merge
+
+Fork main screen:
+![](https://i.ibb.co/J2GMJZZ/Screenshot-35.png)
+First let's clone our repository to new path of our local computer. Go to: File -> Clone
+
+![enter image description here](https://i.ibb.co/nmhZ53P/Screenshot-1.png)
+After successful clone we should see: 
+
+![enter image description here](https://i.ibb.co/5KMZzkm/Screenshot-2.png)
+![enter image description here](https://i.ibb.co/Qb89BrM/Screenshot-3.png)
+Top buttons Fetch, Pull, Push are alternatives to git push, pull, fetch.
+To create new branch we have to press Right click on "Branches" and select create new branch:
+
+![enter image description here](https://i.ibb.co/YR2KH01/Screenshot-4.png)
+Let's create branch named "feature/first-fork-branch"
+
+![enter image description here](https://i.ibb.co/VLm5QDR/Screenshot-5.png)
+And we should see:
+
+![enter image description here](https://i.ibb.co/wYMS9mD/Screenshot-6.png)
+To checkout that branch we double click on that branch (notice change in bold):
+
+![enter image description here](https://i.ibb.co/KyfBNr5/Screenshot-7.png)
+Now let's create new file named "forkNewFile.php" in our project repository:
+
+![enter image description here](https://i.ibb.co/pKqWZBT/Screenshot-8.png)
+Now let's stage these files via fork:
+
+![enter image description here](https://i.ibb.co/W3mmVkK/Screenshot-10.png)
+Press on "Changes (1)", then make sure that necessary files are selected to stage and press "Stage". Notice that file appeared in staged section:
+
+![enter image description here](https://i.ibb.co/LvmbBPJ/Screenshot-11.png)
+And now to commit these changes we have to enter commit name and press "Commit":
+![enter image description here](https://i.ibb.co/K78HQXP/Screenshot-12.png) 
+![enter image description here](https://i.ibb.co/2P64BGH/Screenshot-13.png)
+Now to push these changes to GitHub we press "Push" button
+
+![enter image description here](https://i.ibb.co/YPjC39G/Screenshot-14.png)
+After push, because it's new repository we should see new branch in Remotes section: 
+![enter image description here](https://i.ibb.co/1MJsQ8S/Screenshot-15.png)
+Also in our GitHub repository
+
+![enter image description here](https://i.ibb.co/MRXcxM1/Screenshot-16.png)
+Now let's merge newly created branch to master. We have to checkout **master**, then we right click on "feature/first-fork-branch" and click on "Merge into 'master'..."
+
+![enter image description here](https://i.ibb.co/rtdgDq4/Screenshot-17.png)
+![enter image description here](https://i.ibb.co/xf5mCJD/Screenshot-18.png)
+And then Push, to make them appear on GitHub.
+
+## Fork overview: Git merge conflict
+
+Now small task for you:
+
+ 1. Checkout **master** branch
+ 2. Create new branch named as `feature/adding-second-file-via-fork` and switch to it
+ 3. Create new file in your local computer which is named as `secondFork.php` with text:
+
+	    <?php
+   
+	    print "hello world mate";
+	    print "it's second file made today";
+	    print "by git";
+
+ 4. Stage that file and commit it to your local repository
+ 5. Push branch `feature/adding-second-file-via-fork` to GitHub.
+ 6.  Checkout **master** branch
+ 7. Then create another branch `feature/adding-second-conflicting-file-via-fork` and switch to it
+ 8. Create new file in your local computer which is named as `secondFork.php` with text :
+
+    	<?php
+
+	    print "hello world mate";
+	    print "it's file made by me today";
+	    print "by git";
+8. Stage that file and commit it to your local repository
+9. Push branch `feature/adding-another-fourth-file` to GitHub.
+10. Now merge `feature/adding-second-file-via-fork` to `master` and push `master`
+
+Now when we try to merge `feature/adding-second-conflicting-file-via-fork` to `master` and push `master`Fork will warn us of conflict: 
+
+![enter image description here](https://i.ibb.co/mFJW9RB/Screenshot-19.png)
+ Ok, let's merge it.
+ ![enter image description here](https://i.ibb.co/GRQ4YDZ/Screenshot-20.png)
+
+Uch, still doesn't work, what now?
+After closing that window we should see:
+![enter image description here](https://i.ibb.co/qNSgXkq/Screenshot-21.png)
+After pressing "Merge" button, Merge window should open:
+
+![enter image description here](https://i.ibb.co/N7hdqD9/Screenshot-22.png)
+We can select whole file, which we want to keep, or we can hover on line which we want to choose, and select which side we choose.
+After solving issues, we can press "Resolve", and Merge window should close. If we solved all conflicting files, now we can Commit our Merge and Push.
+
+## GitHub Pull Request
+
+Another task:
+1. Checkout **master** branch
+ 2. Create new branch named as `feature/adding-third-file-via-fork` and switch to it
+ 3. Create new file in your local computer which is named as `thirdFork.php` with text:
+
+	    <?php
+   
+	    print "hello world mate";
+
+ 4. Stage that file and commit it to your local repository
+ 5. Push branch `feature/adding-third-file-via-fork` to GitHub.
+
+Sometimes we want to control who can merge to master/release branches, check if all test reviews, code reviews are passed, if user has necessary permissions etc. So we restricting who can push to master/release branches and do all merges via GitHub or TFS (or other software).
+
+Ok, let's create first pull request from `feature/adding-third-file-via-fork` to our `master` via GitHub
+
+![enter image description here](https://i.ibb.co/kJjCr5H/Screenshot-23.png)
+![enter image description here](https://i.ibb.co/K5BGjgB/Screenshot-24.png)
+There we select base branch (branch we are planing to merge into), compare (branch we are planning to merge, we compare it to base). To create PR (Pull Request), click on "Create pull request"
+![enter image description here](https://i.ibb.co/88mtr9n/Screenshot-25.png)
+Write comment and click on "Create pull request"
+
+![enter image description here](https://i.ibb.co/Ry9qc25/Screenshot-26.png)
+Now you can discuss between team about change, get all approvals etc. For now we can imagine that we did all discussion and we are ready to complete PR. Let's click on "Merge pull request"
+
+![enter image description here](https://i.ibb.co/8dDPYKR/Screenshot-27.png)
+And "Confirm merge"
+
+![enter image description here](https://i.ibb.co/ByQxw6Z/Screenshot-28.png)
+
+## GitHub Pull Request merge conflict solving
+
+Now small task for you:
+
+ 1. Checkout **master** branch
+ 2. Create new branch named as `feature/adding-fourth-file-via-fork` and switch to it
+ 3. Create new file in your local computer which is named as `fourthFork.php` with text:
+
+	    <?php
+   
+	    print "hello world mate";
+	    print "it's fourthfile made today";
+	    print "by git";
+
+ 4. Stage that file and commit it to your local repository
+ 5. Push branch `feature/adding-fourth-file-via-fork` to GitHub.
+ 6.  Checkout **master** branch
+ 7. Then create another branch `feature/adding-fourth-conflicting-file-via-fork` and switch to it
+ 8. Create new file in your local computer which is named as `fourthFork.php` with text :
+
+    	<?php
+
+	    print "hello world mate";
+	    print "it's file made by me today";
+	    print "by fork";
+8. Stage that file and commit it to your local repository
+9. Push branch `feature/adding-another-fourth-file` to GitHub.
+10. Now merge `feature/adding-fourth-file-via-fork` to `master` (via PR)
+
+And create PR `feature/adding-fourth-conflicting-file-via-fork` to `master`. Don't worry about message ' Can’t automatically merge. '
+
+![enter image description here](https://i.ibb.co/C0gHSDb/Screenshot-29.png)
+![enter image description here](https://i.ibb.co/WPKhvsw/Screenshot-30.png)
+As GitHub suggest we can resolve it with Web interface or using git bash, or external tool like Fork. To resolve conflicts using Fork you can use rebase approach or merge approach, merge approach is easiest, fastest and safest, so let's use merge.
+
+Read careful: Using Fork merge `master` into `feature/adding-fourth-conflicting-file-via-fork` and solve these conflicts. I repeat `master` into `feature/adding-fourth-conflicting-file-via-fork` it's other way around.
+After push and refresh on GitHub we should see:
+
+![enter image description here](https://i.ibb.co/hVLhsM7/Screenshot-31.png)
+## Git reset, or we all do mistakes
+
+Ok, another task for you:
+ 1. Checkout **master** branch
+ 2. Edit any existing php file (add line, change text etc)
+ 
+To reset changes you can do it via Fork 
+![enter image description here](https://i.ibb.co/5YqjHYc/Screenshot-32.png)
+or using command:
+
+    git reset --hard
+After that all local changes should be reverted back to original state.
+
+Another task for you:
+ 1. Checkout **master** branch
+ 2. Edit any file
+ 3. Stage that file and commit it to your local repository **Don't push**
+ What if we did commit with mistake, and we want to revert changes back, but we didn't pushed these changes?
+Then in "All commits" screen select last commit in that branch which was good
+
+![enter image description here](https://i.ibb.co/sWj0X6Y/Screenshot-33.png)
+And select "Reset '{branch} to here'"
+
+![enter image description here](https://i.ibb.co/VgykS5H/Screenshot-34.png)
+There you can select what fork should do with your changes:
+
+![enter image description here](https://i.ibb.co/5TXVqJf/Screenshot-35.png)
+Another task for you:
+ 1. Checkout **master** branch
+ 2. Edit any file
+ 3. Stage that file and commit it to your local repository and push changes to GitHub
+ What if we did commit with mistake, and we want to revert changes back, and we pushed these changes?
+Then in "All commits" screen select last commit in that branch which was good, select  "Reset '{branch} to here'" and reset it.
+Then press "Push" and mark "Force push"
+
+![enter image description here](https://i.ibb.co/ZLJkPd0/Screenshot-36.png)
+## Conclusion
+
+We familiarized with day to day features of GIT, we use day to day. There are a lot of more advanced GIT features, like Cherry picking, tagging, rebasing, stashing etc. You can read more about them:
+
+https://rogerdudler.github.io/git-guide/
+https://www.atlassian.com/git/tutorials
+
+
 
