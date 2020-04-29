@@ -452,7 +452,7 @@ Now small task for you:
 	    print "it's file made by me today";
 	    print "by fork";
 8. Stage that file and commit it to your local repository
-9. Push branch `feature/adding-another-fourth-file` to GitHub.
+9. Push branch `feature/adding-fourth-conflicting-file-via-fork` to GitHub.
 10. Now merge `feature/adding-fourth-file-via-fork` to `master` (via PR)
 
 And create PR `feature/adding-fourth-conflicting-file-via-fork` to `master`. Don't worry about message ' Can’t automatically merge. '
