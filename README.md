@@ -19,6 +19,7 @@ What wiki says:
 **Version-control** - How we do version control: 
 
 ![enter image description here](https://i.ibb.co/4PMH3YV/Screenshot-2.png)
+
 How git version control looks like:
 
 ![enter image description here](https://user-images.githubusercontent.com/18033666/40845217-0a1ec660-6584-11e8-8e74-37a68fae953b.png)
@@ -68,6 +69,7 @@ First let's add demo.php file to that repository which contains:
     
     
 ![enter image description here](https://i.ibb.co/tDsmKyb/Screenshot-5.png)
+
 To commit something to local GIT repository we have to add that file to staging area with command:
 
     git add demo.php
@@ -87,6 +89,7 @@ Register to https://github.com/
 After logging in to your GitHub dashboard press "New"
 
 ![enter image description here](https://i.ibb.co/cQP992v/Screenshot-9.png)
+
 Enter repository name and create it:
 
 ![enter image description here](https://i.ibb.co/k6Sr66v/Screenshot-11.png)
@@ -121,9 +124,11 @@ While running "git push -u origin master" we should get GitHub login page:
 And after successful login and push we should get:
 
 ![enter image description here](https://i.ibb.co/kxrq1rM/Screenshot-16.png)
+
 Now let's reload our GitHub repository:
 
 ![enter image description here](https://i.ibb.co/cXgMcvv/Screenshot-17.png)
+
 Cool now we see that our local repository has been synced with GitHub repository. This means that our local changes has been saved to cloud.
 Because git is **Distributed version-control** this means that our files and history is saved in our local computer and GitHub servers. If our cat spills coffee on our laptop, no worries we can get these files from GitHub. And if GitHub cat spills coffee on GitHub servers no worries we have all files and history on our local computer and we can push this files again.
 
@@ -134,9 +139,11 @@ Now let's add new file to GitHub and pull/download these files to our local comp
 And then fill fields like this:
 
 ![enter image description here](https://i.ibb.co/wpQNy8y/Screenshot-18.png)
+
 And now we can see that file in GitHub repository:
 
 ![enter image description here](https://i.ibb.co/2PThv4b/Screenshot-21.png)
+
 But wait we don't see that file in our local computer, we have different versions of same project local computer. How we could solve this?
 Well it's easy we need just to download that remote repository to our local computer with these commands:
 
@@ -154,6 +161,7 @@ Well it's easy we need just to download that remote repository to our local comp
 Well what is branch?
 
 ![enter image description here](https://i.ibb.co/F7m43PC/Untitled.png)
+
 Branches are used to develop features isolated from each other. The _master_ branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
 
 So all this time we were working on master branch, but usually we don't work on this branch directly.
@@ -163,10 +171,12 @@ Let's check current branch:
 
 
 ![enter image description here](https://i.ibb.co/fDMQZKV/Screenshot-23.png)
+
 so let's create local branch and checkout it:
 
     git checkout -b feature_x
 ![enter image description here](https://i.ibb.co/YjYGp9m/Screenshot-24.png)
+
 As we see we were on `master` then we created `feature_x`branch and checked out that branch.
 
 > Branch marked green with star is current branch
@@ -177,6 +187,7 @@ How to get back to `master` branch?
 
     git checkout master
 ![enter image description here](https://i.ibb.co/3fw1KQf/Screenshot-25.png)
+
 And how to delete branch?
 
     git branch -d feature_x
@@ -194,6 +205,7 @@ Now small task for you:
 After all steps we should see in our git hub repository that we have new branch named as `feature/adding-third-file`:
 
 ![enter image description here](https://i.ibb.co/Wv5Q0CV/Screenshot-28.png)
+
 And entering it we will see our new file is created in that branch: 
 
 ![enter image description here](https://i.ibb.co/X8CN73T/Screenshot-29.png)
@@ -218,6 +230,7 @@ So if we want to merge: `feature/adding-third-file` to `master` we have to:
 and if want to push these changes to GitHub, we can push `master`
 
 ![enter image description here](https://i.ibb.co/6XsmLmm/Screenshot-30.png)
+
 And to confirm that we can open our GitHub page and we will see in our `master` branch that we have `third.php`.
 
 ![enter image description here](https://i.ibb.co/W2y3jT2/Screenshot-31.png)
@@ -256,6 +269,7 @@ Let's try it out:
      git merge feature/adding-another-fourth-file
 
 ![enter image description here](https://i.ibb.co/Jsm3rRr/Screenshot-32.png)
+
 Oh with second merge we got message:
 
 	CONFLICT (add/add): Merge conflict in fourth.php
@@ -304,50 +318,67 @@ Now let's stage files with `git add .` and commit it
 
 Fork main screen:
 ![](https://i.ibb.co/J2GMJZZ/Screenshot-35.png)
+
 First let's clone our repository to new path of our local computer. Go to: File -> Clone
 
 ![enter image description here](https://i.ibb.co/nmhZ53P/Screenshot-1.png)
+
 After successful clone we should see: 
 
 ![enter image description here](https://i.ibb.co/5KMZzkm/Screenshot-2.png)
 ![enter image description here](https://i.ibb.co/Qb89BrM/Screenshot-3.png)
+
 Top buttons Fetch, Pull, Push are alternatives to git push, pull, fetch.
 To create new branch we have to press Right click on "Branches" and select create new branch:
 
 ![enter image description here](https://i.ibb.co/YR2KH01/Screenshot-4.png)
+
 Let's create branch named "feature/first-fork-branch"
 
 ![enter image description here](https://i.ibb.co/VLm5QDR/Screenshot-5.png)
+
 And we should see:
 
 ![enter image description here](https://i.ibb.co/wYMS9mD/Screenshot-6.png)
+
 To checkout that branch we double click on that branch (notice change in bold):
 
 ![enter image description here](https://i.ibb.co/KyfBNr5/Screenshot-7.png)
+
 Now let's create new file named "forkNewFile.php" in our project repository:
 
 ![enter image description here](https://i.ibb.co/pKqWZBT/Screenshot-8.png)
+
 Now let's stage these files via fork:
 
 ![enter image description here](https://i.ibb.co/W3mmVkK/Screenshot-10.png)
+
 Press on "Changes (1)", then make sure that necessary files are selected to stage and press "Stage". Notice that file appeared in staged section:
 
 ![enter image description here](https://i.ibb.co/LvmbBPJ/Screenshot-11.png)
+
 And now to commit these changes we have to enter commit name and press "Commit":
+
 ![enter image description here](https://i.ibb.co/K78HQXP/Screenshot-12.png) 
 ![enter image description here](https://i.ibb.co/2P64BGH/Screenshot-13.png)
+
 Now to push these changes to GitHub we press "Push" button
 
 ![enter image description here](https://i.ibb.co/YPjC39G/Screenshot-14.png)
+
 After push, because it's new repository we should see new branch in Remotes section: 
+
 ![enter image description here](https://i.ibb.co/1MJsQ8S/Screenshot-15.png)
+
 Also in our GitHub repository
 
 ![enter image description here](https://i.ibb.co/MRXcxM1/Screenshot-16.png)
+
 Now let's merge newly created branch to master. We have to checkout **master**, then we right click on "feature/first-fork-branch" and click on "Merge into 'master'..."
 
 ![enter image description here](https://i.ibb.co/rtdgDq4/Screenshot-17.png)
 ![enter image description here](https://i.ibb.co/xf5mCJD/Screenshot-18.png)
+
 And then Push, to make them appear on GitHub.
 
 ## Fork overview: Git merge conflict
@@ -387,10 +418,13 @@ Now when we try to merge `feature/adding-second-conflicting-file-via-fork` to `m
 
 Uch, still doesn't work, what now?
 After closing that window we should see:
+
 ![enter image description here](https://i.ibb.co/qNSgXkq/Screenshot-21.png)
+
 After pressing "Merge" button, Merge window should open:
 
 ![enter image description here](https://i.ibb.co/N7hdqD9/Screenshot-22.png)
+
 We can select whole file, which we want to keep, or we can hover on line which we want to choose, and select which side we choose.
 After solving issues, we can press "Resolve", and Merge window should close. If we solved all conflicting files, now we can Commit our Merge and Push.
 
@@ -414,14 +448,19 @@ Ok, let's create first pull request from `feature/adding-third-file-via-fork` to
 
 ![enter image description here](https://i.ibb.co/kJjCr5H/Screenshot-23.png)
 ![enter image description here](https://i.ibb.co/K5BGjgB/Screenshot-24.png)
+
 There we select base branch (branch we are planing to merge into), compare (branch we are planning to merge, we compare it to base). To create PR (Pull Request), click on "Create pull request"
+
 ![enter image description here](https://i.ibb.co/88mtr9n/Screenshot-25.png)
+
 Write comment and click on "Create pull request"
 
 ![enter image description here](https://i.ibb.co/Ry9qc25/Screenshot-26.png)
+
 Now you can discuss between team about change, get all approvals etc. For now we can imagine that we did all discussion and we are ready to complete PR. Let's click on "Merge pull request"
 
 ![enter image description here](https://i.ibb.co/8dDPYKR/Screenshot-27.png)
+
 And "Confirm merge"
 
 ![enter image description here](https://i.ibb.co/ByQxw6Z/Screenshot-28.png)
@@ -459,12 +498,14 @@ And create PR `feature/adding-fourth-conflicting-file-via-fork` to `master`. Don
 
 ![enter image description here](https://i.ibb.co/C0gHSDb/Screenshot-29.png)
 ![enter image description here](https://i.ibb.co/WPKhvsw/Screenshot-30.png)
+
 As GitHub suggest we can resolve it with Web interface or using git bash, or external tool like Fork. To resolve conflicts using Fork you can use rebase approach or merge approach, merge approach is easiest, fastest and safest, so let's use merge.
 
 Read careful: Using Fork merge `master` into `feature/adding-fourth-conflicting-file-via-fork` and solve these conflicts. I repeat `master` into `feature/adding-fourth-conflicting-file-via-fork` it's other way around.
 After push and refresh on GitHub we should see:
 
 ![enter image description here](https://i.ibb.co/hVLhsM7/Screenshot-31.png)
+
 ## Git reset, or we all do mistakes
 
 Ok, another task for you:
@@ -472,7 +513,9 @@ Ok, another task for you:
  2. Edit any existing php file (add line, change text etc)
  
 To reset changes you can do it via Fork 
+
 ![enter image description here](https://i.ibb.co/5YqjHYc/Screenshot-32.png)
+
 or using command:
 
     git reset --hard
@@ -486,12 +529,15 @@ Another task for you:
 Then in "All commits" screen select last commit in that branch which was good
 
 ![enter image description here](https://i.ibb.co/sWj0X6Y/Screenshot-33.png)
+
 And select "Reset '{branch} to here'"
 
 ![enter image description here](https://i.ibb.co/VgykS5H/Screenshot-34.png)
+
 There you can select what fork should do with your changes:
 
 ![enter image description here](https://i.ibb.co/5TXVqJf/Screenshot-35.png)
+
 Another task for you:
  1. Checkout **master** branch
  2. Edit any file
@@ -501,6 +547,7 @@ Then in "All commits" screen select last commit in that branch which was good, s
 Then press "Push" and mark "Force push"
 
 ![enter image description here](https://i.ibb.co/ZLJkPd0/Screenshot-36.png)
+
 ## Conclusion
 
 We familiarized with day to day features of GIT, we use day to day. There are a lot of more advanced GIT features, like Cherry picking, tagging, rebasing, stashing etc. You can read more about them:
